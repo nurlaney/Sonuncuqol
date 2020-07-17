@@ -1,0 +1,82 @@
+﻿@model PostViewModel
+@{ 
+    var post = 0;
+}
+<div id="main-content" class="no-add-alignment no-bottom-space ">
+    <div class="container-fluid">
+
+        <!-- ARTICLE HEADER -->
+
+        <div class="article-header lazy background post-presentation"  style="background-image:url(../../images/@Model.Image)">
+            <div class="gradient gradient1">
+                <div class="wrapper">
+                    @if (Model.Label != null)
+                    {
+                        <div class="post-tags animated fadeIn delay5">
+                            <a href="../tag/science/index.html">@Model.Label.Text</a>
+                        </div>
+                    }
+                    <h1 class="animated fadeInDown delay1">@Model.Title</h1>
+                    <div class="post-add-info animated fadeInUp delay2">
+                        <p><i class="far fa-clock"></i>@Model.AddedDate.ToString("dd.MM.yyyy")</p>
+                    </div>
+                    <div class="article-summary post-presentation ">
+                        <iframe src="@Model.Description" style="height:102px; width:400px" frameborder="0" scrolling="no"></iframe>
+                        <a href="../author/diego/index.html" class="post-author animated fadeInUp delay4">
+                            <div class="author-profile-image background lazy mt-3" data-bg="url(../../images/@Model.Writer.Image)"></div> <span>by</span> @Model.Writer.FullName
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="article post-presentation">
+            <p>@Model.Text</p>
+        </article>
+
+        <!-- ARTICLE FOOTER -->
+        <div class="article-footer post-presentation">
+            <div class="article-footer-level" style="justify-content:flex-end">
+                <a href="#" class="btn btn-transparent btn-lg go-top d-none d-md-flex"><i class="fas fa-arrow-up"></i>Üstə qayıt</a>
+            </div>
+        </div>
+
+        <div id="related-articles" class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            @foreach (var item in ViewBag.posts)
+                    {
+                        post++;
+
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg">
+                    <div class="image-card post-presentation previous-post">
+                        <a asp-controller="post" asp-action="index" asp-route-id="@item.Id" class="card-image lazy background lazy" data-bg="url(../../images/@item.Image)"></a>
+                        <div class="card-content">
+                            @if (item.Label != null)
+                            {
+                                <div class="post-tags">
+                                    <a asp-controller="post" asp-action="index" asp-route-id="@item.Id">@item.Label.Text</a>
+                                </div>
+                            }
+
+                            <div class="wrapper">
+                                <p class="post-description"><i class="fas fa-arrow-left"></i>Növbəti post</p>
+                                <a asp-controller="post" asp-action="index" asp-route-id="@item.Id">
+                                    <h4>@item.Title</h4>
+                                </a>
+                                <a class="post-author" asp-controller="post" asp-action="index" asp-route-id="@item.Id"><span>by</span>@item.Writer.FullName</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                if(post == 2)
+                {
+                    break;
+                }
+            }
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="sonuncuqol-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\DostTech\\source\\repos\\Sonuncuqol\\Sonuncuqol\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="Sonuncuqol.Data.SqDbContext" description="" value="Data Source=SQL5063.site4now.net;Initial Catalog=DB_A648CB_sonuncuqol;User Id=DB_A648CB_sonuncuqol_admin;Password=Malik1903!;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\DostTech\\source\\repos\\Sonuncuqol\\Sonuncuqol\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\Sonuncuqol\.Data\.SqDbContext\.sql$" />
+  </parameter>
+</parameters>

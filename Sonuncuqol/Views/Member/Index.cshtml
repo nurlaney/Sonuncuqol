@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WriterViewModel>
+
+<div id="main-content" class="no-add-alignment no-bottom-space custom-template author-custom-template">
+    <div class="container-fluid">
+        <div class="article-header post-presentation background lazy" style="background-image: url(~/images/dark-pattern16e6.png?v=501cce473e);">
+            <div class="gradient gradient1">
+                <div class="wrapper">
+                    <div class="article-summary post-presentation">
+                        <h1 class="animated fadeInDown delay1">Bizlər</h1>
+                        <h5 class="animated fadeInUp delay2">Bütün üzvlərimiz</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-loop-wrapper">
+            <div class="post-loop">
+                <div class="grid-sizer"></div>
+                <div class="gutter-sizer"></div>
+                @foreach (var item in Model)
+                {
+                    <div data-aos="fade-up" class="grid-item image-card post-presentation author-widget">
+                        <a href="#" class="card-image background lazy" data-bg="url(../../images/@item.Image)"></a>
+                        <div class="card-content">
+                            <div class="wrapper">
+                                <a href="#">
+                                    <h4>@item.FullName</h4>
+                                </a>
+                                <div class="post-add-info">
+                                    <p>@item.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

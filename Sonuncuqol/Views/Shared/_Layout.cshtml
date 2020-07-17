@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#F1F1F1" />
+
+    <title>sonuncuqol fm</title>
+
+    <link rel="stylesheet" href="../use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700|Montserrat:400,500,700" rel="stylesheet">
+    <link href="~/css/plugins.min16e6.css" rel="stylesheet" type="text/css">
+
+    <link href="~/css/style.min16e6.css" rel="stylesheet" type="text/css">
+    <style>
+        .light .background-pattern {
+            background-image: url(~/images/light-pattern16e6.png?v=501cce473e);
+        }
+
+        .dark .background-pattern {
+            background-image: url(~/images/dark-pattern16e6.png?v=501cce473e);
+        }
+    </style>
+
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
+    <link rel="dns-prefetch" href="https://code.jquery.com/">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+
+    <script>
+        var switcherActive = false;
+    </script>
+
+    <meta name="description" content="Fikirlər, düşüncələr,hekayələr." />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <meta property="og:site_name" content="sonuncuqol." />
+    <meta property="og:type" content="sonuncuqol." />
+    <meta property="og:title" content="sonuncuqol." />
+    <meta property="og:description" content="Fikirlər, düşüncələr,hekayələr." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sonuncuqol." />
+    <meta name="twitter:description" content="İki həvəskarın futbol podcast-lər silsiləsi ( ümid edilir )" />
+    <meta name="twitter:image" content="https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images-medium-5/soccer-ball-on-field-paul-ward.jpg" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="720" />
+
+
+    <script defer src="public/members.min16e6.js?v=501cce473e"></script>
+    <link rel="alternate" type="application/rss+xml" title="sonuncuqol" href="#" />
+
+</head>
+
+<body class="home-template
+orange light
+">
+
+    <!-- MOBILE NAVBAR -->
+    <div id="mobile-navbar" class="d-flex d-sm-none">
+        <a asp-controller="home" asp-action="index">
+            <h5>sonuncuqol</h5>
+        </a>
+        <a href="#" class="nav-mob-menu"><i class="fas fa-plus"></i></a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <aside id="main-navbar" class="d-none d-sm-block">
+        <div class="navbar-inner">
+            <div class="navbar-item vertical-navbar-brand d-none d-sm-flex">
+                <a asp-controller="home" asp-action="index">
+                    <p class="letter-logo"></p>
+                    <p class="text-logo">sonuncuqol</p>
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a asp-controller="aboutus" asp-action="index">
+                    <i class="far fa-address-card"></i><span>Haqqımızda</span>
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a asp-controller="member" asp-action="index">
+                    <i class="fas fa-users"></i><span>Üzvlərimiz</span>
+                </a>
+            </div>
+
+            <div class="navbar-item collapsable-item">
+                <a data-toggle="collapse" href="#navigation-collapse3" role="button" aria-expanded="false" aria-controls="navigation-collapse"><i class="fas fa-adjust"></i><span>Gecə/Gündüz rejimi</span></a>
+                <div class="collapse collapse-menu selectors-wrappers" id="navigation-collapse3">
+                    <span>Rejimlər</span>
+                    <div class="color-selector-wrapper primary-colors">
+                        <a class="circular-selector dark" data-value="dark"></a>
+                        <a class="circular-selector light" data-value="light"></a>
+                    </div>
+                    <span>İkinci dərəcəli rəng</span>
+                    <div class="color-selector-wrapper secondary-colors">
+                        <a class="circular-selector orange" data-value="orange"></a>
+                        <a class="circular-selector purple" data-value="purple"></a>
+                        <a class="circular-selector green" data-value="green"></a>
+                        <a class="circular-selector pink" data-value="pink"></a>
+                        <a class="circular-selector blue" data-value="blue"></a>
+                    </div>
+                    <script>
+                        switcherActive = true;
+                    </script>
+                </div>
+            </div>
+        </div>
+    </aside>
+    @RenderBody()
+    <footer>
+        <div class="container-fluid post-presentation">
+            <div class="row d-flex align-items-center">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 o-sm-last footer-credits">
+                    <p>Fikirlər, ideyalar, hekayələr.</p>
+                    <p>sonuncuqol. © 2020.</p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-title o-sm-first">
+                    <h2>sonuncuqol</h2>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var ghosthunter_key = "7b8757b38f6ad089c0f4b58e1f";
+        var maxPages = parseInt('2');
+        var endMessage = 'No more posts';
+    </script>
+
+    <script src="~/js/plugins.min16e6.js"></script>
+
+    <script src="~/js/main.min16e6.js"></script>
+    <script src="https://kit.fontawesome.com/55b64b4942.js" crossorigin="anonymous"></script>
+    <script>
+        var title = 'sonuncuqol';
+        $('p.letter-logo').append(title.charAt(0) + "q.");
+    </script>
+
+
+
+</body>

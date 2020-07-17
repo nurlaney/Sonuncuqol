@@ -1,0 +1,19 @@
+﻿@model CompanyViewModel
+
+    <div id="main-content" class="no-add-alignment no-bottom-space">
+        <div class="container-fluid">
+            <div class="article-header post-presentation background lazy" style="background-image: url(~/images/dark-pattern16e6.png?v=501cce473e);">
+                <div class="gradient gradient1">
+                    <div class="wrapper">
+                        <div class="article-summary post-presentation">
+                            <h1 class="animated fadeInDown delay1">Haqqımızda</h1>
+                            <h5 class="animated fadeInUp delay2">@Model.Description</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <article class="article post-presentation">
+                <p><strong>@Model.Text</strong></p>
+            </article>
+        </div>
+    </div>

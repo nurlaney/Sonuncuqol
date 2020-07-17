@@ -1,0 +1,134 @@
+﻿@model HomeViewModel
+@{
+    var highlighted = 0;
+    var sidepost = 0;
+}
+<div id="main-content">
+    <div class="container-fluid">
+
+        <!-- CUSTOM TAGS -->
+        <div id="custom-tag-news" class="row no-gutters">
+
+            <div class="square-icon d-none d-lg-flex">
+                <i class="fas fa-award"></i>
+            </div>
+            @foreach (var item in Model.Posts.Where(i => i.IsFeatured))
+            {
+                highlighted++;
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="post-tile post-presentation background lazy" style="background-image:url(images/@item.Image)">
+                        <div class="gradient gradient1">
+                            <div class="wrapper">
+                                @if (item.Label != null)
+                                {
+                                    <div class="post-tags">
+                                        <a asp-controller="post" asp-action="index" asp-route-id="@item.Id">@item.Label.Text</a>
+                                    </div>
+                                }
+                                <a asp-controller="post" asp-action="index" asp-route-id="@item.Id">
+                                    <h6>@item.Title</h6>
+                                </a>
+                                <a asp-controller="post" asp-action="index" asp-route-id="@item.Id" class="post-author"><span>by</span>@item.Writer.FullName</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                if (highlighted == 4)
+                {
+                    break;
+                }
+            }
+
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+                <!-- FEATURED POSTS CAROUSEL -->
+                <div class="carousel slide" id="featured-carousel" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach (var item in Model.SliderItems)
+                        {
+                            <div class="post-presentation carousel-item carousel-post @(item == Model.SliderItems.First()?"active":"") background lazy" style="background-image:url(images/@item.Image)">
+                                <div class="gradient gradient1 d-flex align-items-center">
+                                    <a href="athena-the-greek-goddess/index.html" class="post-content">
+                                        <h2 class="animated fadeInDown delay1">@item.Title</h2>
+                                        <p class="post-description d-none d-sm-block animated fadeInUp delay2">
+                                            @item.Description
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+
+                        }
+
+                    </div>
+
+                    <!-- CAROUSEL CONTROLLERS -->
+                    <a class="carousel-control-prev" href="#featured-carousel" role="button" data-slide="prev">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="sr-only">Əvvəlki</span>
+                    </a>
+                    <a class="carousel-control-next" href="#featured-carousel" role="button" data-slide="next">
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="sr-only">Sonrakı</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CAROUSEL INDICATORS -->
+            <div class="d-none d-md-block col-md-4 col-lg-3">
+                <ul id="featured-carousel-indicators" class="list-group">
+                    <li class="list-item-title list-group-item">
+                        <p class="text-secondary">Sonuncu Podcast`lər</p>
+                    </li>
+                    <div class="indicators">
+                        @foreach (var item in Model.Posts)
+                        {
+                            sidepost++;
+                            <li class="list-group-item">
+                                <div class="list-group-item-content">
+                                    <h6>@item.Title</h6>
+                                </div>
+                            </li>
+                            if(sidepost == 8)
+                            {
+                                break;
+                            }
+                        }
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="post-loop-wrapper mb-5">
+            <div class="post-loop">
+                <div class="grid-sizer"></div>
+                <div class="gutter-sizer"></div>
+                @foreach (var item in Model.Posts)
+                {
+                    <article data-aos="fade-up" class="grid-item half-image-card post-presentation">
+                        <a href="was-judgement-of-paris-just-a-story/index.html" class="card-image background lazy" style="background-image:url(images/@item.Image)">
+                        </a>
+                        <div class="card-content">
+                            @if (item.Label != null)
+                            {
+                                <div class="post-tags">
+                                    <a asp-controller="post" asp-action="index" asp-route-id="@item.Id">@item.Label.Text</a>
+                                </div>
+                            }
+                            <div class="wrapper">
+                                <div class="post-add-info">
+                                    <p><i class="far fa-clock"></i>@item.AddedDate.ToString("dd/MM/yyyy")</p>
+                                </div>
+                                <a asp-controller="post" asp-action="index" asp-route-id="@item.Id">
+                                    <h5>@item.Title</h5>
+                                </a>
+                                <a asp-controller="post" asp-action="index" asp-route-id="@item.Id" class="post-author"><span>by</span>@item.Writer.FullName</a>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        </div>
+    </div>
+</div>
