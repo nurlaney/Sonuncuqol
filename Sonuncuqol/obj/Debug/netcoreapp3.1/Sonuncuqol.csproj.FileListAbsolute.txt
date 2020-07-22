@@ -165,3 +165,4 @@ C:\Users\DostTech\source\repos\Sonuncuqol\Sonuncuqol\obj\Debug\netcoreapp3.1\Raz
 C:\Users\DostTech\source\repos\Sonuncuqol\Sonuncuqol\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
 C:\Users\DostTech\source\repos\Sonuncuqol\Sonuncuqol\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Edit.cshtml.g.cs
 C:\Users\DostTech\source\repos\Sonuncuqol\Sonuncuqol\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Index.cshtml.g.cs
+C:\Users\DostTech\source\repos\Sonuncuqol\Sonuncuqol\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Favicons.cshtml.g.cs
